@@ -46,12 +46,13 @@ void loop() {
     Serial.print("taking shot ");
     Serial.println(shotsTaken, DEC); 
 
-    // set pins to 5v
+    // set pins to HIGH
     digitalWrite(sigPin, HIGH); // trip the relay
     digitalWrite(ledPin, HIGH); // led visual indicator
+    
     delay(100); //pause briefly
     
-    // kill voltage to pins
+    // set pins to LOW
     digitalWrite(sigPin, LOW); // trip the relay
     digitalWrite(ledPin, LOW); // led visual indicator
   }
