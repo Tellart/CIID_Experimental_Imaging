@@ -13,7 +13,7 @@ int ledPin = 13; // led indicator pin
 int sigPin = 7;  // signal pin
 
 long lastTrigger  = 0;     // time of last shot (ms)
-int  triggerDelay = 1000;  // time between shots (ms)
+int  triggerDelay = 3000;  // time between shots (ms)
 int  shotsTaken   = 0;     // number shots taken
 bool doneShooting = false; // stops when true
 int  maxShots     = 10;    // max num of shots
@@ -41,6 +41,8 @@ void loop() {
   // if last trigger great than delay, take another shot
   if(millis() - lastTrigger > triggerDelay && !doneShooting) {
 
+    
+
     // print out the number of shots taken
     shotsTaken++;
     Serial.print("taking shot ");
@@ -50,11 +52,13 @@ void loop() {
     digitalWrite(sigPin, HIGH); // trip the relay
     digitalWrite(ledPin, HIGH); // led visual indicator
     
-    delay(100); //pause briefly
+    delay(500); //pause briefly
     
     // set pins to LOW
     digitalWrite(sigPin, LOW); // trip the relay
     digitalWrite(ledPin, LOW); // led visual indicator
+
+    lastTrigger = millis(); //record time of last shot
   }
 
   // if we've reach the max number of shots, stop shooting
