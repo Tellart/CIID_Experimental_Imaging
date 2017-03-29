@@ -28,7 +28,7 @@ defining CUSTOM_SETTINGS and shields INCLUDE_ definition
 int ledPin = 13;
 int sigPin = 7;
 
-int threshold = 50;
+int threshold = 80;
 
 /* SETUP
  --------------------------------- */
