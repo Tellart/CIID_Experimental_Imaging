@@ -46,6 +46,8 @@ void loop() {
   // confirm reading by debouncing the input
   if( confirm(reading) ) {
 
+    Serial.println("Sensor Detected!");
+
     // set signal & led pins to HIGH
     digitalWrite(sigPin, HIGH); // trip the relay
     digitalWrite(ledPin, HIGH); // led visual indicator

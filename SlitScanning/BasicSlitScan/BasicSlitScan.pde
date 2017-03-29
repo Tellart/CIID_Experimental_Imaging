@@ -17,11 +17,11 @@ int videoSliceX;
 int drawPositionX;
 
 void setup() {
-  size(600, 240);
+  size(1680, 1050);
   
   // This the default video input, see the GettingStartedCapture 
   // example if it creates an error
-  video = new Capture(this,320, 240);
+  video = new Capture(this,1680, 1050);
   
   // Start capturing the images from the camera
   video.start();  
